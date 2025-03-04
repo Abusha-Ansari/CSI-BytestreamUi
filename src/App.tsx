@@ -1,9 +1,27 @@
-const App = () => {
-  return (
-    <div className="w-screen bg-amber-300 flex flex-row justify-center items-center p-3">
-      <h1 className="text-4xl text-center block font-bold">Bytestream</h1>
-    </div>
-  )
-}
+import { useState } from "react";
+import FullscreenVideo from "./ownComponents/FullScreenVideo";
+import { ParticlesDemo } from "./ownComponents/SparkleHero";
+import BytestreamLanding from "./ownComponents/bytestream-landing";
 
-export default App
+export default function App() {
+  const [videoEnded, setVideoEnded] = useState(false);
+
+  return (
+    <>
+      {!videoEnded && (
+        <FullscreenVideo onVideoEnd={() => setVideoEnded(true)} />
+      )}
+
+      {videoEnded && (
+        <>
+          <BytestreamLanding />
+          <div className="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
+            <div className="w-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-black dark:text-white overflow-hidden">
+              <ParticlesDemo heading1={"A New Dimension"} />
+            </div>
+          </div>
+        </>
+      )}
+    </>
+  );
+}
