@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
+
 import { Particles } from "@/components/ui/particles"
 
 interface ParticlesDemoProps {
   heading1: string
 }
 
-export function ParticlesDemo({heading1}: ParticlesDemoProps) { 
+export function ParticlesDemo({heading1}: ParticlesDemoProps) {
   const  theme  = "dark"
   const [color, setColor] = useState("#ffffff")
 
@@ -14,16 +15,15 @@ export function ParticlesDemo({heading1}: ParticlesDemoProps) {
   }, [theme])
 
   return (
-    <div className="relative flex h-[500px] w-screen flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-bold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl bg-black">
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
         {heading1}
       </span>
       <Particles
         className="absolute inset-0"
-        quantity={1000}
+        quantity={400}
         ease={80}
         color={color}
-        size={0.8}
         refresh
       />
     </div>

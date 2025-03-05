@@ -15,10 +15,8 @@ export default function App() {
       {videoEnded && (
         <>
           <BytestreamLanding />
-          <div className="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
-            <div className="w-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-black dark:text-white overflow-hidden">
-              <ParticlesDemo heading1={"A New Dimension"} />
-            </div>
+          <div className="h-screen bg-black hover:cursor-pointer">
+          <ParticlesDemo heading1={"A New Dimension"} />
           </div>
         </>
       )}

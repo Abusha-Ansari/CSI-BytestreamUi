@@ -28,7 +28,7 @@ export default function FullscreenVideo({ onVideoEnd }: FullscreenVideoProps) {
     <div className="fixed inset-0 flex items-center justify-center bg-black">
       <video
         ref={videoRef}
-        src="/video.mp4" // Ensure correct path
+        src="/LandingPageVideo.mp4" // Ensure correct path
         className="w-full h-full object-cover"
         autoPlay
         muted
